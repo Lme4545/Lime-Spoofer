@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* 背景動画をカバー */
+#bg-video {
+    object-fit: cover; /* ビデオを画面いっぱいに広げる */
+    width: 100%;
+    height: 100%;
+}
+
+/* 背景に暗いオーバーレイを追加 */
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 黒の半透明オーバーレイ */
+    z-index: -1; /* 背景動画より下に表示 */
+}
+
+/* コンテンツ */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #00ff73, #ffff00, #2bff00);
+    background-size: 400% 400%; /* グラデーションの幅を広げる */
+    animation: gradientRipple 1.5s ease-in-out infinite; /* アニメーションを速く */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 20px #00a028, 0 0 30px #88ff00, 0 0 40px #ffff00;
+    position: relative;
+}
+
+p {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #ffffff, #ffffff, #000000);
+    background-size: 400% 400%; /* グラデーションの幅を広げる */
+    animation: gradientRipple 1.5s ease-in-out infinite; /* アニメーションを速く */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #000000;
+    position: relative;
+}
+
+/* 波紋のように動くグラデーション */
+@keyframes gradientRipple {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 50% 0%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 100%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeInText 2s 1s forwards;
+}
+
+.cta-button {
+    background: #2e3ae5;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    text-shadow: 0 0 10px #00d9ff, 0 0 20px #5900ff, 0 0 30px #1900ff;
+}
+
+/* ボタンがホバーされた時のアニメーション */
+.cta-button:hover {
+    background: #0077ff;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #3700ff, 0 0 30px #2f00ff, 0 0 40px #0051ff;
+    text-shadow: 0 0 20px #e100ff, 0 0 30px #9900ff, 0 0 40px #008cff;
+}
+
+
+/* アニメーション */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeInText {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
