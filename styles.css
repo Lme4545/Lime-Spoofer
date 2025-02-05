@@ -39,12 +39,13 @@ body, html {
     animation: fadeIn 2s ease-in-out;
 }
 
+/* グラデーションテキスト */
 h1 {
     font-size: 4rem;
     margin-bottom: 20px;
     background: linear-gradient(45deg, #00ff73, #ffff00, #2bff00);
-    background-size: 400% 400%; /* グラデーションの幅を広げる */
-    animation: gradientRipple 1.5s ease-in-out infinite; /* アニメーションを速く */
+    background-size: 400% 400%;
+    animation: gradientRipple 1.5s ease-in-out infinite;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -52,45 +53,69 @@ h1 {
     position: relative;
 }
 
-p {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    background: linear-gradient(45deg, #ffffff, #ffffff, #000000);
-    background-size: 400% 400%; /* グラデーションの幅を広げる */
-    animation: gradientRipple 1.5s ease-in-out infinite; /* アニメーションを速く */
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #000000;
-    position: relative;
-}
-
-/* 波紋のように動くグラデーション */
-@keyframes gradientRipple {
-    0% {
-        background-position: 0% 50%;
-    }
-    25% {
-        background-position: 50% 0%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    75% {
-        background-position: 50% 100%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
+/* コンテンツ */
 p {
     font-size: 1.5rem;
     margin-bottom: 40px;
     opacity: 0;
     animation: fadeInText 2s 1s forwards;
+    text-align: center;
 }
 
+/* 各文字のバウンスエフェクトとグロー */
+p span {
+    display: inline-block;
+    opacity: 1;
+    animation: bounceText 2s ease-in-out infinite, glowText 1.5s ease-in-out infinite alternate;
+}
+
+/* 各文字が順番にアニメーション */
+p span:nth-child(1) { animation-delay: 0.1s; }
+p span:nth-child(2) { animation-delay: 0.2s; }
+p span:nth-child(3) { animation-delay: 0.3s; }
+p span:nth-child(4) { animation-delay: 0.4s; }
+p span:nth-child(5) { animation-delay: 0.5s; }
+p span:nth-child(6) { animation-delay: 0.6s; }
+p span:nth-child(7) { animation-delay: 0.7s; }
+p span:nth-child(8) { animation-delay: 0.8s; }
+
+
+/* バウンスエフェクト */
+@keyframes bounceText {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.4); /* 最大の大きさ */
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2); /* 少し大きさを残して最小に近づける */
+        opacity: 0;
+    }
+}
+
+/* グローエフェクト */
+@keyframes glowText {
+    0% {
+        text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 20px #ffffff;
+    }
+    50% {
+        text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
+    }
+    100% {
+        text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 20px #ffffff;
+    }
+}
+
+/* フェードインアニメーション */
+@keyframes fadeInText {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* ボタンスタイル */
 .cta-button {
     background: #2e3ae5;
     border: none;
@@ -111,8 +136,26 @@ p {
     text-shadow: 0 0 20px #e100ff, 0 0 30px #9900ff, 0 0 40px #008cff;
 }
 
+/* グラデーション波紋アニメーション */
+@keyframes gradientRipple {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 50% 0%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    75% {
+        background-position: 50% 100%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
-/* アニメーション */
+/* フェードインアニメーション */
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
