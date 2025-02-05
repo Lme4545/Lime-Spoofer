@@ -10,12 +10,16 @@ body, html {
     overflow: hidden;
 }
 
-/* 背景動画をカバー */
 #bg-video {
-    object-fit: cover; /* ビデオを画面いっぱいに広げる */
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%); /* 動画を中央に位置させる */
 }
+
 
 /* 背景に暗いオーバーレイを追加 */
 .background-overlay {
