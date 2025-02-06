@@ -140,6 +140,127 @@ p span:nth-child(8) { animation-delay: 0.8s; }
     text-shadow: 0 0 20px #e100ff, 0 0 30px #9900ff, 0 0 40px #008cff;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* ボタンの配置 */
+.button-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center; /* 文字を垂直方向でセンタリング */
+    gap: 10px; /* スラッシュの間に適切なスペース */
+    z-index: 1000; /* 他の要素より前面に表示 */
+}
+
+/* 文字スタイルのリンク */
+.cta-link {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 0;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* 文字にグロー効果 */
+}
+
+/* Discordの文字に動くグラデーションを追加 */
+.cta-link.discord {
+    background: linear-gradient(45deg, #3b82f6, #ffffff, #3b82f6, #ffffff);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* 背景色を透明にしてグラデーションを表示 */
+    animation: gradientMove 3s ease infinite; /* グラデーションが動くアニメーション */
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; /* 初期のグロー */
+    animation: gradientMove 3s ease infinite, glowEffect 3s ease infinite; /* グローにもアニメーション */
+}
+
+.cta-link.youtube {
+    background: linear-gradient(45deg, #ffffff, #1eff00, #ffffff, #00ff80);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* 背景色を透明にしてグラデーションを表示 */
+    animation: gradientMove 3s ease infinite; /* グラデーションが動くアニメーション */
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; /* 初期のグロー */
+    animation: gradientMove 3s ease infinite, glowEffect1 3s ease infinite; /* グローにもアニメーション */
+}
+
+/* グローエフェクトのアニメーション */
+@keyframes glowEffect {
+    0% {
+        text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+    }
+    50% {
+        text-shadow: 0 0 20px #3b82f6, 0 0 30px #ffffff, 0 0 40px #3b82f6;
+    }
+    100% {
+        text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+    }
+}
+
+/* グローエフェクトのアニメーション */
+@keyframes glowEffect1 {
+    0% {
+        text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+    }
+    50% {
+        text-shadow: 0 0 20px #70f63b, 0 0 30px #ffffff, 0 0 40px #d9ff00;
+    }
+    100% {
+        text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+    }
+}
+
+/* スラッシュのスタイル */
+.slash {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    padding: 0 5px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* スラッシュにもグロー効果 */
+}
+
+/* ホバー時のエフェクト */
+.cta-link:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9); /* ホバー時に文字のグローが強調される */
+    filter: brightness(1.2);
+}
+
+.slash:hover {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.9); /* スラッシュにもホバー時のグロー */
+}
+
+/* グラデーションアニメーション */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
 /* グラデーション波紋アニメーション */
 @keyframes gradientRipple {
     0% {
@@ -169,3 +290,4 @@ p span:nth-child(8) { animation-delay: 0.8s; }
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+
