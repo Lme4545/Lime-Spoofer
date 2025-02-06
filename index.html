@@ -31,7 +31,16 @@
 
     <div class="button-container">
         <a href="https://discord.gg/rokisiii" class="cta-link discord">Support</a><span class="slash">/</span>
-        <a href="https://lme4545.github.io/Lime-Spoofer/" class="cta-link youtube">UD</a>
+        <a href="https://lme4545.github.io/Lime-Spoofer/" class="cta-link youtube" onclick="openPopup(event)">Status</a>
+
+<!-- ポップアップのHTML -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h2>Status</h2>
+        <a href="https://lme4545.github.io/Lime-Spoofer/" class="popup-button">Undetected</a>
+    </div>
+</div>
     </div>
     
     
