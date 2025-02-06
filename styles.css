@@ -103,13 +103,13 @@ p span:nth-child(8) { animation-delay: 0.8s; }
 /* グローエフェクト */
 @keyframes glowText {
     0% {
-        text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 20px #ffffff;
+        text-shadow: 0 0 5px #ffffff, 0 0 10px #00c3ff, 0 0 15px #ffffff, 0 0 20px #00d9ff;
     }
     50% {
-        text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
+        text-shadow: 0 0 10px #2600ff, 0 0 20px #ffffff, 0 0 30px #001aff, 0 0 40px #ffffff;
     }
     100% {
-        text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 20px #ffffff;
+        text-shadow: 0 0 5px #ffffff, 0 0 10px #a200ff, 0 0 15px #ffffff, 0 0 20px #7700ff;
     }
 }
 
